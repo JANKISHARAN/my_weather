@@ -1,0 +1,157 @@
+{
+  "theme": "Dynamic Context-Aware (Adaptive Light/Dark)",
+  "archetype": "5 (Jewel & Luxury) + Glassmorphism Variant",
+  "design_rationale": "Apple Weather-style premium dashboard focusing on immersive dynamic gradient backgrounds paired with frosted glass panels (optical clarity). The UI elements must adapt contrast based on the underlying atmospheric background.",
+  "typography": {
+    "headings": {
+      "family": "Outfit",
+      "weights": ["400", "600", "800"],
+      "classes": "font-sans tracking-tight"
+    },
+    "body": {
+      "family": "Manrope",
+      "weights": ["300", "400", "500", "600"],
+      "classes": "font-sans leading-relaxed tracking-normal"
+    },
+    "mono": {
+      "family": "JetBrains Mono",
+      "classes": "font-mono tracking-wider"
+    },
+    "sizes": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl font-light tracking-tighter",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight",
+      "h3": "text-xl sm:text-2xl font-medium",
+      "h4": "text-lg sm:text-xl font-medium",
+      "body": "text-base sm:text-sm",
+      "small": "text-sm text-opacity-80",
+      "label": "text-xs font-bold uppercase tracking-[0.2em]"
+    }
+  },
+  "color_system": {
+    "dynamic_themes": {
+      "sunny": {
+        "gradient": "bg-gradient-to-br from-amber-200 via-orange-300 to-rose-400",
+        "text_primary": "text-slate-900",
+        "text_secondary": "text-slate-700",
+        "glass_bg": "bg-white/30 backdrop-blur-2xl",
+        "glass_border": "border border-white/40",
+        "texture_url": "https://static.prod-images.emergentagent.com/jobs/9aed61f5-41ca-4af7-a97f-18802955e802/images/39c9bb670eb96f38f57dd6b62675032b24d01ee68d48ecff2981c04b9fd15c05.png"
+      },
+      "rainy": {
+        "gradient": "bg-gradient-to-br from-slate-800 via-blue-900 to-slate-950",
+        "text_primary": "text-white",
+        "text_secondary": "text-blue-100/80",
+        "glass_bg": "bg-white/10 backdrop-blur-3xl",
+        "glass_border": "border border-white/10",
+        "texture_url": "https://static.prod-images.emergentagent.com/jobs/9aed61f5-41ca-4af7-a97f-18802955e802/images/f886c55c207bcaa1f74ce76729ce936a46c8baa93247cfbf6657ca19a14e662c.png"
+      },
+      "night": {
+        "gradient": "bg-gradient-to-br from-indigo-950 via-purple-950 to-black",
+        "text_primary": "text-white",
+        "text_secondary": "text-purple-200/70",
+        "glass_bg": "bg-white/5 backdrop-blur-3xl",
+        "glass_border": "border border-white/10",
+        "texture_url": "https://static.prod-images.emergentagent.com/jobs/9aed61f5-41ca-4af7-a97f-18802955e802/images/c948bc9937615fed8c3b0d0add3dde5949709a31aa83421e60cd52b40374f71a.png"
+      },
+      "cloudy": {
+        "gradient": "bg-gradient-to-br from-slate-300 via-slate-400 to-slate-500",
+        "text_primary": "text-slate-900",
+        "text_secondary": "text-slate-700",
+        "glass_bg": "bg-white/20 backdrop-blur-2xl",
+        "glass_border": "border border-white/30",
+        "texture_url": "https://static.prod-images.emergentagent.com/jobs/9aed61f5-41ca-4af7-a97f-18802955e802/images/2d981e4915b085347a05ffbea74d729281124d5738c64e3fb67e8d3e4dfc58df.png"
+      }
+    },
+    "static_neutrals": {
+      "surface_active": "bg-white/20",
+      "surface_hover": "hover:bg-white/30",
+      "border_default": "border-white/20",
+      "focus_ring": "focus:ring-2 focus:ring-white/50"
+    }
+  },
+  "layout_and_spacing": {
+    "grid_system": "Bento Grid Protocol (Control Room Variant) adapted for Weather Dashboard",
+    "base_grid": "grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-6 p-6 sm:p-8 lg:p-12",
+    "component_spans": {
+      "search_bar": "col-span-full",
+      "main_weather_hero": "col-span-full md:col-span-8 row-span-2",
+      "hourly_forecast": "col-span-full md:col-span-8",
+      "weekly_forecast": "col-span-full md:col-span-4 lg:col-span-4 row-span-3",
+      "bento_widgets_aqi_uv": "col-span-2 md:col-span-4 lg:col-span-4",
+      "bento_widgets_small": "col-span-2 md:col-span-2 lg:col-span-2"
+    },
+    "spacing_scale": "Use generous padding inside glass panels (p-6 to p-8) to ensure breathing room from frosted edges.",
+    "border_radius": "rounded-3xl for main panels, rounded-2xl for inner cards, rounded-full for buttons and icons."
+  },
+  "surfaces_and_materials": {
+    "primary_glass": {
+      "description": "High-end crystal glassmorphism.",
+      "classes": "bg-white/10 backdrop-blur-2xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.12)] rounded-3xl overflow-hidden relative z-10"
+    },
+    "secondary_glass": {
+      "description": "Subtler inner panels.",
+      "classes": "bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl"
+    },
+    "interactive_elements": {
+      "classes": "transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:bg-white/20 active:scale-95 cursor-pointer"
+    }
+  },
+  "motion_and_interactions": {
+    "page_load": "Staggered fade-up entry for bento grid items using Framer Motion (`initial={{ opacity: 0, y: 20 }}`)",
+    "weather_transitions": "Smooth crossfade (duration: 1s) when switching weather condition themes.",
+    "hover_states": "Soft glow effects or slight background opacity increase on glass elements.",
+    "loading_skeleton": "Shimmer effect using `animate-pulse` mixed with `bg-white/10` blocks instead of standard gray skeletons.",
+    "micro_interactions": "Recharts tooltip needs to use glassmorphism styling (`backdrop-blur-md bg-white/10 border border-white/20`)."
+  },
+  "components_strategy": {
+    "search": "Floating centered search bar with glassmorphism, glowing ring on focus. Use Autocomplete drop-down.",
+    "weather_hero": "Displays Current Temp, Location, 'Feels like', and an immersive weather icon/animation. Large, thin typography.",
+    "forecast_weekly": "Vertical list, dense data, alignment is key. Icon + High/Low bars.",
+    "forecast_hourly": "Horizontal scrollable graph using Recharts `AreaChart` with gradients under the curve. Smooth, bezier interpolation.",
+    "bento_metrics": "Square cards for AQI, UV Index, Humidity, Wind. Use subtle SVG icons and emphasize the primary number.",
+    "libraries": [
+      "lucide-react (for UI icons)",
+      "framer-motion (for layout transitions)",
+      "recharts (for hourly temperature curves)",
+      "axios (WeatherAPI.com)"
+    ]
+  },
+  "media_and_assets": {
+    "background_textures": [
+      {
+        "category": "sunny",
+        "url": "https://static.prod-images.emergentagent.com/jobs/9aed61f5-41ca-4af7-a97f-18802955e802/images/39c9bb670eb96f38f57dd6b62675032b24d01ee68d48ecff2981c04b9fd15c05.png",
+        "description": "Warm sunny abstract glass texture overlay. Add `mix-blend-overlay` and low opacity (`opacity-40`)."
+      },
+      {
+        "category": "rainy",
+        "url": "https://static.prod-images.emergentagent.com/jobs/9aed61f5-41ca-4af7-a97f-18802955e802/images/f886c55c207bcaa1f74ce76729ce936a46c8baa93247cfbf6657ca19a14e662c.png",
+        "description": "Dark blue rain condensation texture. Add `mix-blend-overlay` and medium opacity (`opacity-60`)."
+      },
+      {
+        "category": "night",
+        "url": "https://static.prod-images.emergentagent.com/jobs/9aed61f5-41ca-4af7-a97f-18802955e802/images/c948bc9937615fed8c3b0d0add3dde5949709a31aa83421e60cd52b40374f71a.png",
+        "description": "Dark purple night sky texture. Add `mix-blend-screen` and low opacity (`opacity-30`)."
+      },
+      {
+        "category": "cloudy",
+        "url": "https://static.prod-images.emergentagent.com/jobs/9aed61f5-41ca-4af7-a97f-18802955e802/images/2d981e4915b085347a05ffbea74d729281124d5738c64e3fb67e8d3e4dfc58df.png",
+        "description": "Fluffy overcast cloud texture. Add `mix-blend-overlay` and low opacity (`opacity-40`)."
+      }
+    ]
+  },
+  "accessibility_and_testing": {
+    "contrast": "Since backgrounds vary, use dynamic text color utilities (e.g., swapping to dark text on 'sunny', light text on 'night/rainy'). Use text-shadow if contrast dips.",
+    "testing_attributes": "All interactive elements must have `data-testid` (e.g., `data-testid=\"search-input\"`, `data-testid=\"toggle-unit-button\"`).",
+    "reduced_motion": "Wrap Framer Motion animations to respect `prefers-reduced-motion: reduce`."
+  },
+  "instructions_to_main_agent": [
+    "Install 'lucide-react', 'recharts', 'framer-motion', 'clsx', 'tailwind-merge', 'axios', and '@fontsource/outfit', '@fontsource/manrope' via yarn.",
+    "Set up Tailwind to include custom fonts in `tailwind.config.js` under `fontFamily: { sans: ['Manrope', 'sans-serif'], display: ['Outfit', 'sans-serif'] }`.",
+    "Use a centralized 'WeatherContext' or Zustand store to manage weather data, current location, and the dynamic theme state.",
+    "The root `App` component must dynamically apply the background gradient and the absolute-positioned texture image based on the current weather condition.",
+    "Construct the dashboard using `lucide-react` icons styled with gradients or simple clean strokes inside the glass bento cards.",
+    "Ensure the Recharts AreaChart uses a transparent background, white/dark grid lines (depending on theme), and a curved line (`type=\"monotone\"`) with an elegant gradient fill.",
+    "The 7-day forecast should be a vertical list inside a single tall glass pane, maximizing use of space (Control Room Grid mode)."
+  ]
+}
