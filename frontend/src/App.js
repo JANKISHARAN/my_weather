@@ -6,7 +6,7 @@ import "@fontsource/manrope/300.css";
 import "@fontsource/manrope/400.css";
 import "@fontsource/manrope/500.css";
 import "@fontsource/manrope/600.css";
-import "@/App.css";
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { WeatherProvider, useWeather } from "./context/WeatherContext";
 import { motion, AnimatePresence } from "framer-motion";
