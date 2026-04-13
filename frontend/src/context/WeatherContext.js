@@ -2,8 +2,8 @@ import React, { createContext, useContext, useState, useEffect, useCallback } fr
 import axios from 'axios';
 
 // Default for local dev when .env is missing or CRA cache is stale
-// const BACKEND_URL = (process.env.local.REACT_APP_BACKEND_URL || "").replace(/\/$/, "");
-const API = `d69f4ce76b4b0c0187c31ed7dd543560`;
+const BACKEND_URL = (import.meta.env.REACT_APP_BACKEND_URL || "").replace(/\/$/, "");
+const API = `${BACKEND_URL}/api`;
 
 const getFetchErrorMessage = (err) => {
   const detail = err.response?.data?.detail;
