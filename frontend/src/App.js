@@ -107,14 +107,9 @@ const WeatherDashboard = () => {
 
 function App() {
   return (
-    <WeatherProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<WeatherDashboard />} />
-          <Route path="*" element={<WeatherDashboard />} />
-        </Routes>
-      </BrowserRouter>
-    </WeatherProvider>
+   <div>
+    <h1>Hello</h1>
+  </div>
   );
 }
 
