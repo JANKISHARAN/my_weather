@@ -90,7 +90,7 @@ export const WeatherProvider = ({ children }) => {
     setError(null);
     
     try {
-      const response = await axios.get(`${API}/weather/${encodeURIComponent(locationQuery)}`, {
+      const response = await axios.get(`${API}/weather/forecast/${encodeURIComponent(locationQuery)}`, {
         params: { days: 7, aqi: true, alerts: true }
       });
       
