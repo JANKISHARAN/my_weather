@@ -9,7 +9,7 @@ const getFetchErrorMessage = (err) => {
   const detail = err.response?.data?.detail;
   if (detail) return typeof detail === 'string' ? detail : JSON.stringify(detail);
   if (err.code === 'ERR_NETWORK' || err.message === 'Network Error') {
-    return 'Cannot reach the weather server. Start the backend (port 8000) and refresh.';
+    return 'Cannot reach the weather server. Start the backend and refresh.';
   }
   if (err.message) return err.message;
   return 'Failed to fetch weather data';
