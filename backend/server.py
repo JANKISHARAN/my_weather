@@ -24,7 +24,7 @@ async def weather(city: str):
         return {"error": "API key missing"}
 
     url = "https://api.weatherapi.com/v1/forecast.json"
-    params = {"key": API_KEY, "q": city}
+    params = {"key": API_KEY, "q": city, "days": 7}
 
     async with httpx.AsyncClient() as client:
         res = await client.get(url, params=params)
