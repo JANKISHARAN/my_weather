@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect, useCallback } fr
 import axios from 'axios';
 
 // Default for local dev when .env is missing or CRA cache is stale
-const BACKEND_URL = "https://my-weather-w8zx.onrender.com/api/weather/new delhi";
+const BACKEND_URL = "https://my-weather-w8zx.onrender.com";
 const API = `${BACKEND_URL}/api`;
 
 const getFetchErrorMessage = (err) => {
