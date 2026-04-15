@@ -4,7 +4,7 @@ import httpx
 
 app = FastAPI()
 
-API_KEY = os.getenv("d69f4ce76b4b0c0187c31ed7dd543560")
+API_KEY = "d69f4ce76b4b0c0187c31ed7dd543560"
 
 @app.get("/")
 def home():
