@@ -18,7 +18,7 @@ API_KEY = "207206ad356c419a9a2174814260604"
 def home():
     return {"status": "ok"}
 
-@app.get("/api/weather/forecast{city}")
+@app.get("/api/weather/{city}")
 async def weather(city: str):
     if not API_KEY:
         return {"error": "API key missing"}
