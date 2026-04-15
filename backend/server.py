@@ -18,12 +18,12 @@ API_KEY = "207206ad356c419a9a2174814260604"
 def home():
     return {"status": "ok"}
 
-@app.get("/api/weather/{city}")
+@app.get("/api/weather/forecast{city}")
 async def weather(city: str):
     if not API_KEY:
         return {"error": "API key missing"}
 
-    url = "https://api.weatherapi.com/v1/current.json"
+    url = "https://api.weatherapi.com/v1/forecast.json"
     params = {"key": API_KEY, "q": city}
 
     async with httpx.AsyncClient() as client:
